@@ -1,0 +1,121 @@
+﻿@model Interesse
+@{
+    ViewData["Title"] = "Hotsite";
+}
+
+<div class="text">
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <h2 class="card-title">Iniciativa Saúde da Cidade</h2>
+            <p class="card-text">Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his
+                consul
+                copiosae legendos at vix ad putent delectus delicata usu.
+                Vidit dissentiet eos cu eum an brute copiosae hendrerit.</p>
+            <p class="card-text">Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his
+                consul
+                copiosae legendos at vix ad putent delectus delicata usu.
+                Vidit dissentiet eos cu eum an brute copiosae hendrerit.</p>
+        </div>
+    </div>
+</div>
+<div class="imagem" style="height: 450px;">
+    <img class="img1" src="~/img/img1.jpg" class="img-fluid" alt="img1.jpg">
+</div>
+<div class="mensagem">
+    <h2>Entre em contato</h2>
+    <h4>Nos mande uma mensagem e fique por dentro de nossos eventos</h4>
+    <form name="cadastro" action="/Home/Cadastrar" method="POST" onsubmit="Validar();">
+        <div class="mb-3">
+            <label asp-for="Nome" id="Nome" for="exampleFormControlInput1" class="form-label">Nome</label>
+            <input asp-for="Nome" type="text" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" id="Email" for="exampleFormControlInput1" class="form-label">Email</label>
+            <input asp-for="Email" type="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Mensagem" for="message">Mensagem</label>
+            <textarea asp-for="Mensagem" class="form-control" id="message" rows="5"></textarea>
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+<div class="cards">
+    <div class="row row-cols-1 row-cols-md-3 g-4 card1">
+        <div class="col">
+            <a href="#popup-2" onclick="togglePopup2()">
+                <div class="card" style="width: 10rem; height: 15em;">
+                    <img src="~/img/Agenda.jpg" class="card-img-top" alt="Agenda.jpg">
+                    <div class="card-body">
+                        <h5 class="card-title">Agenda de Eventos</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 card1">
+        <div class="col">
+            <a href="#popup-1" onclick="togglePopup1()">
+                <div class="card" style="width: 10rem; height: 15em;">
+                    <img src="~/img/Dicas.jpg" class="card-img-top" alt="Dicas.jpg">
+                    <div class="card-body">
+                        <h5 class="card-title">Dicas de Vida Saudável</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 card1">
+        <div class="col">
+            <a href="#popup-3" onclick="togglePopup3()">
+                <div class="card" style="width: 10rem; height: 15em;">
+                    <img src="~/img/Apoiadores.jpg" class="card-img-top" alt="Apoiadores.jpg">
+                    <div class="card-body">
+                        <h5 class="card-title">Apoiadores</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="popup-1">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="close-btn" onclick="togglePopup1()">&times;</div>
+        <h2>Dicas de Vida Saudável</h2>
+        <p>1. Inclua castanhas na rotina alimentar.</p>
+        <p>2. Reduza a ingestão de sal e aumente o consumo de água.</p>
+        <p>3. Não pule o café da manhã.</p>
+        <p>4. Pratique exercícios físicos regularmente.</p>
+        <p>5. Mantenha os ovos na dieta.</p>
+        <p>6. Uma taça de vinho, pode.</p>
+        <p>7. Evite o refrigerante, inclusive nas versões diet ou light.</p>
+        <p>8. Coma um jantar leve, mas coma.</p>
+    </div>
+</div>
+<div class="popup" id="popup-2">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="close-btn" onclick="togglePopup2()">&times;</div>
+        <h2>Agenda de Eventos</h2>
+        <h3>Maio-2021</h3>
+        <p>07/05 - Workshop Pilates</p>
+        <p>14/05 - Dicas de Alimentação</p>
+        <p>21/05 - Exercícios em casa</p>
+        <p>28/05 - Saúde Mental</p>
+    </div>
+</div>
+<div class="popup" id="popup-3">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="close-btn" onclick="togglePopup3()">&times;</div>
+        <h2>Apoiadores</h2>
+        <p>Grupo - BioRitmo</p>
+        <p>Hospital Israelita Albert Einstein</p>
+        <p>Governo do Estado de São Paulo</p>
+    </div>
+</div>
+<script src="~/js/Alerta.js"></script>
+<script src="~/js/Popup.js"></script>

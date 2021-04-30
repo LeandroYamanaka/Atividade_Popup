@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/css/site.css" type="text/css" rel="stylesheet">
+    <link href="~/Bootstrap/bootstrap.min.css" rel="stylesheet">
+    <title>@ViewData["Title"] - Hotsite</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Hotsite</h1>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        <div class="footertext">
+            © 2020 Copyright - Hotsite
+        </div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
